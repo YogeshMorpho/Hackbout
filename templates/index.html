@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block content %}
+<div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/qna">QNA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/aboutus">About us</a>
+            </li>
+            </li>
+          </ul>
+      </nav>
+    
+    <div class="header">
+        <div class="info">
+            <form id="upload-file" method="post" enctype="multipart/form-data">
+                <header>
+                    <div class="overlay">
+                <h2>Click on the button to know the condition of your crop</h2>
+                        </div>
+                
+                <label for="imageUpload" class="upload-label">
+                   <h3>choose</h3> 
+                </label>
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            </form>
+       
+        <div class="image-section" style="display:none;">
+            <div class="img-preview">
+                <div id="imagePreview">
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Check the condition of your crop</button>
+            </div>
+        </div>
+    
+        <div class="loader" style="display:none;"></div>
+    
+        <h3 id="result">
+            <span> </span>
+        </h3>
+      </div>
+     </div>
+      
+
+    
+    </header>
+    <section class="content">
+        <p>{{b}}</p>
+        </section>
+        <dvi>
+    <div class='btn1' style="text-align:center;">
+    <label  class="upload-label">
+                   <a href="/shops"><h3>Show nearby fertiliser stores</h3></a> 
+    </label>
+    </div>
+        </div>
+</div>
+
+{% endblock %}

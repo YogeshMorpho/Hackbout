@@ -1,0 +1,53 @@
+
+
+<html>
+<head>
+<script type="text/javascript" href="{{ url_for('static', filename='../static/app.js')}}"></script>
+<script src="https://apis.mapmyindia.com/advancedmaps/v1/807f4236-97e0-4f99-a2ae-1218470fef85/map_load?v=1.3"></script>
+<style>
+    #map{
+        height: 100%;
+        width:100%;
+    }
+    .popup{
+        background-color: white;
+        border: 1px solid red;
+        border-radius:20px;
+        text-align: center;
+        width:200px;
+    }
+</style>
+</head>
+<body>
+    <h1></h1>
+<div id="map"></div>
+
+<script>
+    function myFunc(vars) {
+    return vars
+}
+function myFunc2(vars) {
+    return vars
+}
+    var list=myFunc({{d|tojson}})
+    var detail=myFunc2({{data|tojson}})
+    var map = new MapmyIndia.Map("map", {
+   center: list[0],
+   zoomControl: true,
+   hybrid: true,
+   search: true,
+   location: true
+ });
+ var j=0;
+ {% for i in range(0,length) %}
+ L.marker(list[j]).addTo(map).bindPopup(
+     
+     '<div class="popup"><p1>Distance:"{{data[i]["distance"]}}"</p1><p>Place Name:"{{data[i]["placeName"]}}"</p><p>placeAddress:"{{data[i]["placeAddress"]}}"</p</div>'
+
+ );
+ j++;
+ {% endfor %}
+</script>
+
+</body>
+</html>
