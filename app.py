@@ -106,7 +106,7 @@ def upload():
     return 'RANDOM'
 
 import json,requests
-api_token = '807f4236-97e0-4f99-a2ae-1218470fef85'
+api_token = 'Your mapmyindia api token here'
 #api_url_base ='https://atlas.mapmyindia.com/api/places/nearby/json?keywords=fertiliser&refLocation=12.8434519,77.37721959999999'
 api_url_base ='https://atlas.mapmyindia.com/api/places/search/json?query=fertiliser'
 
